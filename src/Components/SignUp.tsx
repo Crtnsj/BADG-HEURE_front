@@ -17,8 +17,8 @@ const SignUp = () => {
       });
   };
   return (
-    <>
-      <h1 className="bg-red-500">Inscrivez-vous</h1>
+    <div className="bg-white p-4 rounded-lg gap-1">
+      <h1 className="font-bold mb-4 text-center">Inscrivez-vous</h1>
       <form method="post" onSubmit={handleSubmit}>
         <div>
           <label>
@@ -44,15 +44,15 @@ const SignUp = () => {
             <input type="password" name="pswd" />
           </label>
         </div>
-        <div>
-          <label>
-            Rester connecté
-            <input type="checkbox" name="stayConnect" />
-          </label>
+        <div className="gap-3 flex">
+          <label>Restez connecté</label>
+          <input type="checkbox" name="stayConnect" />
         </div>
-        <button>Valider</button>
+        <div className="flex justify-center m-2">
+          <button className="bg-color2 text-white p-1 rounded-md">Valider</button>
+        </div>
       </form>
-    </>
+    </div>
   );
 };
 

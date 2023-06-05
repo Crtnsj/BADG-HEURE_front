@@ -1,26 +1,14 @@
-import { useState } from 'react';
-import SignIn from './Components/SignIn';
-import SignUp from './Components/SignUp';
+// import LoginPages from './Components/LoginPages';
+
+import Elements from './Components/Exos/Elements';
 
 function App() {
-  let [optionLogin, setoptionLogin] = useState(false);
-
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    e.preventDefault();
-    if (optionLogin === true) {
-      setoptionLogin(false);
-    } else {
-      setoptionLogin(true);
-    }
-  };
-
+  // return <LoginPages />;
   return (
-    <>
-      {optionLogin ? <SignUp /> : <SignIn />}
-      <a href="" onClick={handleClick}>
-        {optionLogin ? 'Se connecter' : "S'inscrire"}
-      </a>
-    </>
+    <div>
+      hello
+      <Elements />
+    </div>
   );
 }
 

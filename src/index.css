@@ -5,3 +5,10 @@
 body {
   min-height: 100vh;
 }
+
+input {
+  border-bottom-width: 2px;
+}
+input:hover {
+  background-color: #f5f5f5;
+}
