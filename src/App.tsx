@@ -1,15 +1,7 @@
-// import LoginPages from './Components/LoginPages';
-
-import Elements from './Components/Exos/Elements';
+import LoginPages from './Components/LoginPages';
 
 function App() {
-  // return <LoginPages />;
-  return (
-    <div>
-      hello
-      <Elements />
-    </div>
-  );
+  return <LoginPages />;
 }
 
 export default App;

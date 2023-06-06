@@ -8,7 +8,7 @@ const SignUp = () => {
     // console.log(formJson);
 
     axios
-      .post('http://localhost:3001/signup/', formJson)
+      .post('http://localhost:3001/signUp/', formJson)
       .then(function (response) {
         console.log(response);
       })
@@ -19,7 +19,7 @@ const SignUp = () => {
   return (
     <div className="bg-white p-4 rounded-lg gap-1">
       <h1 className="font-bold mb-4 text-center">Inscrivez-vous</h1>
-      <form method="post" onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <div>
           <label>
             Nom <br />
