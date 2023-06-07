@@ -8,7 +8,7 @@ const SignUp = () => {
     // console.log(formJson);
 
     axios
-      .post('http://localhost:3001/signUp/', formJson)
+      .post('http://localhost:3001/logIn/signUp/', formJson)
       .then(function (response) {
         console.log(response);
       })

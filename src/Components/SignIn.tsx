@@ -9,7 +9,7 @@ const SignIn = () => {
     // console.log(formJson);
 
     axios
-      .post('http://localhost:3001/signIn/', formJson)
+      .post('http://localhost:3001/logIn/signIn/', formJson)
       .then(function (response) {
         console.log(response);
       })

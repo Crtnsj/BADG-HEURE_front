@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import SignIn from './SignIn';
-import SignUp from './SignUp';
+import SignIn from '../SignIn';
+import SignUp from '../SignUp';
 
 const LoginPages = () => {
   let [optionLogin, setoptionLogin] = useState(false);
