@@ -5,6 +5,7 @@ export default {
     extend: {
       backgroundImage: {
         login_img: "url('../src/assets/Login_img.jpeg')",
+        logo: "url('../src/assets/logo.png')",
       },
       maxWidth: {
         'login-gradient': '10px',
