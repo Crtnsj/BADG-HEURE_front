@@ -6,16 +6,20 @@ type Props = {
 const NewsCard = ({ type, content, important }: Props) => {
   if (!important) {
     return (
-      <div className="border-2 border-blue-500 p-2 w-1/5">
-        <h1>{type}</h1>
-        <p>{content}</p>
+      <div className=" p-2 w-1/5 bg-color3 rounded">
+        <h1 className="text-black font-Montserrat font-bold text-center block border-b-2 border-gray-500">
+          {type}
+        </h1>
+        <p className="font-Montserrat text-center">{content}</p>
       </div>
     );
   } else {
     return (
-      <div className="border-2 border-red-500 p-2 w-1/5">
-        <h1>{type}</h1>
-        <p>{content}</p>
+      <div className="shadow-Important p-2 w-1/5 bg-color3 rounded ">
+        <h1 className="text-black font-Montserrat font-bold text-center block border-b-2 border-gray-500">
+          {type}
+        </h1>
+        <p className="font-Montserrat">{content}</p>
       </div>
     );
   }

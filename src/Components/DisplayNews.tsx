@@ -24,8 +24,10 @@ const News = () => {
   const news: data[] = data;
   return (
     <div className="flex flex-col justify-center items-center m-4 gap-4">
-      <div className="bg-color1 p-2 rounded w-1/2 text-center"> Quelques infos RH en brefs</div>
-      <div className="flex flex-row gap-1 flex-wrap justify-around w-4/5">
+      <div className="bg-color1 p-2 rounded w-1/2 text-center font-Montserrat font-extrabold">
+        Quelques infos RH en brefs
+      </div>
+      <div className="flex flex-row gap-1 flex-wrap justify-around w-5/6">
         {news.map((info) => {
           return <NewsCard type={info.type} content={info.content} important={info.important} />;
         })}
