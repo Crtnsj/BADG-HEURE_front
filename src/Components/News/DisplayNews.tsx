@@ -7,7 +7,6 @@ type data = {
   content: string;
   important: boolean;
 };
-const storageToken = localStorage.getItem('JWT');
 const News = () => {
   const [data, setData] = useState(null);
 
