@@ -12,7 +12,7 @@ const News = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get('http://localhost:3001/news/viewNews');
+      const response = await axios.get('http://localhost:3002/news/viewNews');
       setData(response.data);
     };
     fetchData();
@@ -28,8 +28,15 @@ const News = () => {
         Quelques infos RH en brefs
       </div>
       <div className="flex flex-row gap-1 flex-wrap justify-around w-5/6">
-        {news.map((info) => {
-          return <NewsCard type={info.type} content={info.content} important={info.important} />;
+        {news.map((info, index) => {
+          return (
+            <NewsCard
+              key={index}
+              type={info.type}
+              content={info.content}
+              important={info.important}
+            />
+          );
         })}
       </div>
     </div>

@@ -1,7 +1,19 @@
-import LoginPages from './Components/Pages/LoginPages';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function App() {
-  return <LoginPages />;
+  const storageToken = localStorage.getItem('token');
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!storageToken) {
+      navigate('/auth');
+    } else {
+      navigate('/home');
+    }
+  }, [storageToken, navigate]);
+
+  return <></>;
 }
 
 export default App;

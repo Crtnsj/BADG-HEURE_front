@@ -1,9 +1,11 @@
 import axios from 'axios';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const SignIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const data = { email, password };
 
@@ -11,21 +13,22 @@ const SignIn = () => {
     e.preventDefault();
 
     axios
-      .post(`http://localhost:3001/logIn/signIn/`, data)
-      .then(function (response) {
-        console.log(response);
+      .post(`http://localhost:3002/logIn/signIn/`, data)
+      .then((response) => {
+        localStorage.setItem('token', response.data.token);
+        navigate('/home');
       })
-      .catch(function (error) {
+      .catch((error) => {
         console.log(error);
       });
   };
-  const handleChangeEmail = (e: any) => setEmail(e.target.value);
 
+  const handleChangeEmail = (e: any) => setEmail(e.target.value);
   const handleChangePassword = (e: any) => setPassword(e.target.value);
 
   return (
-    <div className="bg-white">
-      <h1>Identiez-vous</h1>
+    <div className="bg-white p-4 rounded-lg gap-1">
+      <h1 className="font-Montserrat font-bold">Identiez-vous</h1>
       <form onSubmit={handleSubmit}>
         <div>
           <input type="text" name="email" onChange={handleChangeEmail} value={email} />
@@ -37,7 +40,9 @@ const SignIn = () => {
           <br />
           <label>Mot de passe</label>
         </div>
-        <button type="submit">Valider</button>
+        <div className="flex justify-center m-2">
+          <button className="bg-color2 text-white p-1 rounded-md">Valider</button>
+        </div>
       </form>
     </div>
   );

@@ -1,4 +1,4 @@
-import News from '../DisplayNews';
+import News from '../Components/News/DisplayNews';
 
 const Home = () => {
   return (
@@ -7,9 +7,9 @@ const Home = () => {
         <div className="bg-cover bg-center bg-logo h-8 w-14"></div>
         <div className="bg-cover bg-center bg-logo h-8 w-14"></div>
       </header>
-      <body>
+      <div>
         <News />
-      </body>
+      </div>
     </>
   );
 };

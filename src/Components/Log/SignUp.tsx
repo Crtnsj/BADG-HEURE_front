@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
   const [nom, setNom] = useState('');
@@ -8,16 +9,18 @@ const SignUp = () => {
   const [password, setPassword] = useState('');
 
   const data = { nom, prenom, email, password };
+  const navigate = useNavigate();
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
 
     axios
-      .post(`http://localhost:3001/logIn/signUp/`, data)
-      .then(function (response) {
-        console.log(response);
+      .post(`http://localhost:3002/logIn/signUp/`, data)
+      .then((response) => {
+        localStorage.setItem('token', response.data.token);
+        navigate('/home');
       })
-      .catch(function (error) {
+      .catch((error) => {
         console.log(error);
       });
   };
@@ -29,7 +32,7 @@ const SignUp = () => {
 
   return (
     <div className="bg-white p-4 rounded-lg gap-1">
-      <h1 className="font-bold mb-4 text-center">Inscrivez-vous</h1>
+      <h1 className="font-Montserrat font-bold mb-4 text-center">Inscrivez-vous</h1>
       <form onSubmit={handleSubmit}>
         <div>
           <label>
