@@ -14,8 +14,8 @@ const SignIn = () => {
 
     axios
       .post(`http://localhost:3002/logIn/signIn/`, data)
-      .then((response) => {
-        localStorage.setItem('token', response.data.token);
+      .then(async (response) => {
+        localStorage.setItem('JWT', response.data.token);
         navigate('/home');
       })
       .catch((error) => {

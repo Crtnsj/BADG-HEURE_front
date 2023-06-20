@@ -5,7 +5,7 @@ import Home from './Pages/HomePage';
 import LoginPages from './Pages/LoginPages';
 import ProtectRoutes from './Components/ProtectRoutes';
 
-const storageToken = localStorage.getItem('token');
+const storageToken = localStorage.getItem('JWT');
 
 const router = createBrowserRouter([
   {

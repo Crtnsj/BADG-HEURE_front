@@ -6,7 +6,7 @@ const ProtectRoutes = ({ children }: any) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem('JWT');
 
     if (!token) {
       navigate('/auth');

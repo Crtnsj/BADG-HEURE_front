@@ -7,12 +7,15 @@ type data = {
   content: string;
   important: boolean;
 };
+const storageToken = localStorage.getItem('JWT');
 const News = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get('http://localhost:3002/news/viewNews');
+      const response = await axios.get('http://localhost:3002/news/viewNews', {
+        headers: { Authorization: `Bearer ${localStorage.getItem('JWT')}` },
+      });
       setData(response.data);
     };
     fetchData();
