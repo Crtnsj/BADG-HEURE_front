@@ -5,8 +5,6 @@ import Home from './Pages/HomePage';
 import LoginPages from './Pages/LoginPages';
 import ProtectRoutes from './Components/ProtectRoutes';
 
-const storageToken = localStorage.getItem('JWT');
-
 const router = createBrowserRouter([
   {
     path: '/',
@@ -22,7 +20,7 @@ const router = createBrowserRouter([
     path: '/home',
     errorElement: <ErrorPage />,
     element: (
-      <ProtectRoutes token={storageToken}>
+      <ProtectRoutes>
         <Home />
       </ProtectRoutes>
     ),
