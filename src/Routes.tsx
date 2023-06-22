@@ -4,6 +4,9 @@ import ErrorPage from './Pages/ErrorPage';
 import Home from './Pages/HomePage';
 import LoginPages from './Pages/LoginPages';
 import ProtectRoutes from './Components/ProtectRoutes';
+import AddNews from './Components/News/AddNews';
+import DisplayNews from './Components/News/DisplayNews';
+import ProtectAdminRoutes from './Components/ProtectAdminRoutes';
 
 const router = createBrowserRouter([
   {
@@ -24,6 +27,20 @@ const router = createBrowserRouter([
         <Home />
       </ProtectRoutes>
     ),
+    children: [
+      {
+        path: '/home',
+        element: <DisplayNews />,
+      },
+      {
+        path: '/home/addNews',
+        element: (
+          <ProtectAdminRoutes>
+            <AddNews />
+          </ProtectAdminRoutes>
+        ),
+      },
+    ],
   },
 ]);
 

@@ -1,5 +1,4 @@
-import News from '../Components/News/DisplayNews';
-
+import { Outlet } from 'react-router-dom';
 const Home = () => {
   return (
     <>
@@ -8,7 +7,7 @@ const Home = () => {
         <div className="bg-cover bg-center bg-logo h-8 w-14"></div>
       </header>
       <div>
-        <News />
+        <Outlet />
       </div>
     </>
   );

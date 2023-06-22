@@ -13,19 +13,26 @@ const ProtectRoutes = ({ children }: any) => {
       navigate('/auth');
     } else {
       const tokenValidator = async () => {
-        const response = await axios.get('http://localhost:3002/tokenValidator', {
-          headers: { Authorization: `Bearer ${localStorage.getItem('JWT')}` },
-        });
-        if (response.data.valid === true) {
-          setIsAuthenticated(true);
-        } else {
+        try {
+          const response = await axios.get('http://localhost:3002/tokenValidator', {
+            headers: { Authorization: `Bearer ${localStorage.getItem('JWT')}` },
+          });
+          if (response.data.valid === true) {
+            setIsAuthenticated(true);
+          } else {
+            localStorage.removeItem('JWT');
+            setIsAuthenticated(false);
+            navigate('/auth');
+          }
+        } catch (error) {
           localStorage.removeItem('JWT');
+          setIsAuthenticated(false);
           navigate('/auth');
         }
       };
       tokenValidator();
     }
-  }, []);
+  }, [navigate]);
 
   return isAuthenticated ? children : null;
 };
