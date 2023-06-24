@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+//composant de signIn
 const SignIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -9,6 +10,7 @@ const SignIn = () => {
 
   const data = { email, password };
 
+  // au submit -> envoyer les data et inserer le JWT dans le localstorage
   const handleSubmit = (e: any) => {
     e.preventDefault();
 
@@ -26,6 +28,7 @@ const SignIn = () => {
   const handleChangeEmail = (e: any) => setEmail(e.target.value);
   const handleChangePassword = (e: any) => setPassword(e.target.value);
 
+  //formulaire de connexion
   return (
     <div className="bg-white p-4 rounded-lg gap-1">
       <h1 className="font-Montserrat font-bold">Identiez-vous</h1>

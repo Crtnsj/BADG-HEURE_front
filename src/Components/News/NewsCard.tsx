@@ -3,6 +3,8 @@ type Props = {
   content: string;
   important: boolean;
 };
+//Composant NewsCard qui prend en props les informations et les disposes de la bonne façon.
+//Il ajoute aussi un contour rouge aux inforamtions importantes afin de les mettre en évidence
 const NewsCard = ({ type, content, important }: Props) => {
   if (!important) {
     return (

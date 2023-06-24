@@ -2,10 +2,12 @@ import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
+//composant servant à rendres les composant enfants uniquement si le JWT est valide
 const ProtectRoutes = ({ children }: any) => {
   const navigate = useNavigate();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
+  // Verifie si le JWT est valide et le supprime s'il ne l'est pas. Si JWT n'est pas valide -> renvoie à la page de connexion
   useEffect(() => {
     const token = localStorage.getItem('JWT');
 
@@ -34,6 +36,7 @@ const ProtectRoutes = ({ children }: any) => {
     }
   }, [navigate]);
 
+  // si isAuthentificated -> renvoyer le composant enfant
   return isAuthenticated ? children : null;
 };
 
