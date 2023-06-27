@@ -7,6 +7,10 @@ export default {
       backgroundImage: {
         login_img: "url('../src/assets/Login_img.jpeg')",
         logo: "url('../src/assets/logo.png')",
+        logo_hour: "url('../src/assets/logo_hour.png')",
+        eye: "url('../src/assets/eye-det.png')",
+        retard: "url('../src/assets/retard.png')",
+        enveloppe: "url('../src/assets/enveloppe.png')",
       },
       maxWidth: {
         'login-gradient': '10px',
@@ -21,6 +25,10 @@ export default {
         'login-template': '1fr,10px,1fr',
       },
       boxShadow: { Important: '1px 1px 2px red' },
+      minWidth: {
+        '4/5': '80%',
+      },
+      minHeight: { '4/5': '80%' },
     },
   },
   plugins: [],

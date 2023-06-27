@@ -7,6 +7,8 @@ import ProtectRoutes from './Components/ProtectRoutes';
 import AddNews from './Components/News/AddNews';
 import DisplayNews from './Components/News/DisplayNews';
 import ProtectAdminRoutes from './Components/ProtectAdminRoutes';
+import DisplayActions from './Components/Actions/DisplayActions';
+import AddBadg from './Components/Badgeage/AddBadg';
 
 const router = createBrowserRouter([
   {
@@ -30,8 +32,15 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/home',
-        element: <DisplayNews />,
+        element: (
+          <>
+            <DisplayActions />
+            <DisplayNews />
+          </>
+        ),
       },
+      { path: '/home/badgeage', element: <AddBadg /> },
+
       {
         path: '/home/addNews',
         element: (

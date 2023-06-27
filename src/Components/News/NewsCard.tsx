@@ -21,7 +21,7 @@ const NewsCard = ({ type, content, important }: Props) => {
         <h1 className="text-black font-Montserrat font-bold text-center block border-b-2 border-gray-500">
           {type}
         </h1>
-        <p className="font-Montserrat">{content}</p>
+        <p className="font-Montserrat text-center">{content}</p>
       </div>
     );
   }

@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import ErrorPage from '../Pages/ErrorPage';
 
 // Composant ProtectAdminRoutes qui vérifie si l'utilisateur est un administrateur avant de rendre le contenu de l'enfant (children) passé en tant que prop.
 const ProtectAdminRoutes = ({ children }: any) => {
@@ -18,7 +17,7 @@ const ProtectAdminRoutes = ({ children }: any) => {
   }, []);
 
   // Si l'utilisateur est admin -> rendre children, sinon rendre le composant ErrorPage
-  return isAdmin ? children : <ErrorPage />;
+  return isAdmin ? children : <p>Loading...</p>;
 };
 
 export default ProtectAdminRoutes;
