@@ -9,6 +9,7 @@ import DisplayNews from './Components/News/DisplayNews';
 import ProtectAdminRoutes from './Components/ProtectAdminRoutes';
 import DisplayActions from './Components/Actions/DisplayActions';
 import AddBadg from './Components/Badgeage/AddBadg';
+import DisplayRetrospection from './Components/Badgeage/DisplayRetrospection';
 
 const router = createBrowserRouter([
   {
@@ -40,7 +41,7 @@ const router = createBrowserRouter([
         ),
       },
       { path: '/home/badgeage', element: <AddBadg /> },
-
+      { path: '/home/retrospection', element: <DisplayRetrospection /> },
       {
         path: '/home/addNews',
         element: (
