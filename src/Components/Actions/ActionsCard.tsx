@@ -14,7 +14,7 @@ const ActionCard = (props: Props) => {
   return (
     <button
       onClick={handleClick}
-      className="p-5 w-1/5 bg-gray-300 rounded text-center flex flex-col justify-center items-center"
+      className="p-5 w-1/5 bg-color3 rounded text-center flex flex-col justify-center items-center"
     >
       {props.actionType === 'badgeage' && (
         <>

@@ -53,13 +53,22 @@ const AddBadg = () => {
   };
 
   return (
-    <div className="flex justify-center items-center m-4 gap-4">
-      <div className="flex">
-        <div className={`bg-cover bg-center bg-logo_hour w-2/4 aspect-square`}></div>
-        <p>Badger ma présence</p>
-        <button onClick={handleClick}>Valider mon entrée / sortie</button>
+    <>
+      <div className="flex justify-center items-center mt-4">
+        <div className="p-2 rounded w-1/2 text-center font-Montserrat font-extrabold bg-color1">
+          Page de Badgeage
+        </div>
       </div>
-    </div>
+      <div className="flex justify-center items-center mt-8 gap-4 ">
+        <div className="flex bg-color3 p-4 rounded w-1/3 justify-around">
+          <div className="bg-cover bg-center bg-logo_hour w-2/12 aspect-square"></div>
+          <p className="flex items-center justify-center text-center">Badger ma présence</p>
+          <button onClick={handleClick} className="bg-color4 rounded p-4">
+            Valider mon entrée / sortie
+          </button>
+        </div>
+      </div>
+    </>
   );
 };
 

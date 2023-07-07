@@ -18,7 +18,8 @@ export default {
       colors: {
         color1: '#DCF2E6',
         color2: '#36403A',
-        color3: '#F2F2F2',
+        color3: '#e3e7ee',
+        color4: '#f2f6fe',
       },
       gridTemplateColumns: {
         // Simple 16 column grid

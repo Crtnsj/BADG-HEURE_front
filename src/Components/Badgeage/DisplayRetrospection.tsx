@@ -19,10 +19,12 @@ const Retrospection = () => {
   }, []);
 
   return (
-    <>
-      <p>Page de rétrospection</p>
+    <div className="flex flex-col justify-center items-center m-4 gap-4">
+      <div className="p-2 rounded w-1/2 text-center font-Montserrat font-extrabold bg-color1">
+        Page de Retrospection
+      </div>
       <DisplayRetrospection dates={badgeages} />
-    </>
+    </div>
   );
 };
 

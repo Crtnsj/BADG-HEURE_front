@@ -2,9 +2,13 @@ import { useState, useEffect } from 'react';
 
 const DisplayRetrospection = (props: any) => {
   const [actualSem, setActualSem] = useState([]);
+  const [weekOffset, setWeekOffset] = useState(0);
+
   const daysOfWeek = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'];
+
   useEffect(() => {
     const now = new Date();
+    now.setDate(now.getDate() + weekOffset * 7);
 
     const today = () => {
       const dayOfWeek = now.getDay();
@@ -25,7 +29,7 @@ const DisplayRetrospection = (props: any) => {
     }
 
     setActualSem(otherDays);
-  }, []);
+  }, [weekOffset]);
 
   const formatDate = (date: any) => {
     const daysOfWeek = ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Diman'];
@@ -44,47 +48,58 @@ const DisplayRetrospection = (props: any) => {
 
   const traduction = props.dates.map((date: any) => formatDate(new Date(parseInt(date))));
 
-  console.log(traduction);
-  console.log(actualSem);
+  const handlePrevWeek = () => {
+    setWeekOffset(weekOffset - 1);
+  };
+
+  const handleNextWeek = () => {
+    setWeekOffset(weekOffset + 1);
+  };
+
   return (
-    <table className="border-solid border-2">
-      <thead className="border-solid border-2">
-        <tr className="border-solid border-2">
-          <th className="border-solid border-2">Jour</th>
-          {[1, 2, 3, 4].map((numero) => (
-            <th key={numero} className="border-solid border-2">
-              {numero}
-            </th>
-          ))}
-        </tr>
-      </thead>
-      <tbody>
-        {actualSem.map((jour, index) => {
-          const cells = [];
+    <div>
+      <div>
+        <button onClick={handlePrevWeek}>Semaine précédente</button>
+        <button onClick={handleNextWeek}>Semaine suivante</button>
+      </div>
+      <table className="border-solid border-2">
+        <thead className="border-solid border-2">
+          <tr className="border-solid border-2">
+            <th className="border-solid border-2">Jour</th>
+            {[1, 2, 3, 4].map((numero) => (
+              <th key={numero} className="border-solid border-2">
+                {numero}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {actualSem.map((jour, index) => {
+            const cells = [];
 
-          // Vérifie si la date est dans les traductions
-          const matchingDates = traduction.filter((date: any) => date.date === jour);
+            const matchingDates = traduction.filter((date: any) => date.date === jour);
 
-          // Ajoute les cellules correspondantes
-          for (let i = 0; i < 4; i++) {
-            if (matchingDates[i]) {
-              cells.push(<td className="border-solid border-2">{matchingDates[i].hour}</td>);
-            } else {
-              cells.push(<td className="border-solid border-2"></td>);
+            for (let i = 0; i < 4; i++) {
+              if (matchingDates[i]) {
+                cells.push(<td className="border-solid border-2">{matchingDates[i].hour}</td>);
+              } else {
+                cells.push(<td className="border-solid border-2"></td>);
+              }
             }
-          }
 
-          return (
-            <tr key={index} className="border-solid border-2">
-              <td className="border-solid border-2">
-                {daysOfWeek[index]} - {jour}
-              </td>
-              {cells}
-            </tr>
-          );
-        })}
-      </tbody>
-    </table>
+            return (
+              <tr key={index} className="border-solid border-2">
+                <td className="border-solid border-2">
+                  {daysOfWeek[index]} - {jour}
+                </td>
+                {cells}
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
   );
 };
+
 export default DisplayRetrospection;
