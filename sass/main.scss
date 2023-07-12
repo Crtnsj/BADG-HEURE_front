@@ -1,0 +1,68 @@
+.navBar {
+  position: absolute;
+  top: -100vh;
+  left: -20rem;
+  transition: transform 0.5s ease;
+  min-height: 100vh;
+  background-color: #36403a;
+  z-index: 1;
+  color: white;
+  display: flex;
+  padding-top: 3rem;
+  width: 15rem;
+
+  &.showLinks {
+    top: 0;
+    left: 0;
+    transition: all 0.35s ease-out;
+
+    + .menuBurger .burger-bar::before {
+      transform: rotate(45deg);
+      background-color: #fff;
+    }
+    + .menuBurger .burger-bar::after {
+      transform: rotate(-45deg);
+      background-color: #fff;
+    }
+    + .menuBurger .burger-bar {
+      background-color: transparent;
+      width: 0;
+    }
+  }
+}
+
+.menuBurger {
+  z-index: 2;
+
+  .burger-bar,
+  .burger-bar::before,
+  .burger-bar::after {
+    height: 0.25rem;
+    width: 2rem;
+    background-color: #000;
+    display: block;
+    margin-left: 1rem;
+    transition: all 0.35s ease-in-out;
+    border-radius: 1rem;
+  }
+
+  .burger-bar {
+    visibility: visible;
+  }
+
+  .burger-bar::before,
+  .burger-bar::after {
+    position: absolute;
+    left: 0;
+    content: '';
+    z-index: 2;
+  }
+
+  .burger-bar::before {
+    transform: translateY(-0.5rem);
+  }
+
+  .burger-bar::after {
+    transform: translateY(0.5rem);
+  }
+}

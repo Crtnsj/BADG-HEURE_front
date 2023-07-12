@@ -11,6 +11,10 @@ export default {
         eye: "url('../src/assets/eye-det.png')",
         retard: "url('../src/assets/retard.png')",
         enveloppe: "url('../src/assets/enveloppe.png')",
+        info: "url('../src/assets/info.png')",
+        compte: "url('../src/assets/compte.png')",
+        logout: "url('../src/assets/logout.png')",
+        home: "url('../src/assets/home.png')",
       },
       maxWidth: {
         'login-gradient': '10px',
@@ -28,6 +32,7 @@ export default {
       boxShadow: { Important: '1px 1px 2px red' },
       minWidth: {
         '4/5': '80%',
+        64: '16rem',
       },
       minHeight: { '4/5': '80%' },
     },
