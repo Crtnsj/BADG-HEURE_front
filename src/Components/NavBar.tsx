@@ -44,6 +44,15 @@ const NavBar = () => {
     e.preventDefault();
     navigate('/home/about');
   };
+  const handleClickMyAccount = (e: any) => {
+    e.preventDefault();
+    navigate('/home/myAccount');
+  };
+  const handleClickDeconnection = (e: any) => {
+    e.preventDefault();
+    localStorage.removeItem('JWT');
+    navigate('/');
+  };
   return (
     <>
       <nav ref={navBarRef} className={`navBar ${viewNavBar ? 'showLinks' : 'hideLinks'}`}>
@@ -65,14 +74,14 @@ const NavBar = () => {
             </button>
           </li>
           <li className="flex w-full">
-            <a href="/myAccount" className="flex w-full gap-3 font-Montserrat">
+            <button onClick={handleClickMyAccount} className="flex w-full gap-3 font-Montserrat">
               <div className="bg-compte bg-cover bg-center w-7 h-7 aspect-square"></div>Mon compte
-            </a>
+            </button>
           </li>
           <li className="flex w-full">
-            <a href="/deconnexion" className="flex w-full gap-3 font-Montserrat">
+            <button onClick={handleClickDeconnection} className="flex w-full gap-3 font-Montserrat">
               <div className="bg-logout bg-cover bg-center w-7 aspect-square"></div>Déconnexion
-            </a>
+            </button>
           </li>
         </ul>
       </nav>
