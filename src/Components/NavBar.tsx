@@ -55,7 +55,7 @@ const NavBar = () => {
   };
   return (
     <>
-      <nav ref={navBarRef} className={`navBar ${viewNavBar ? 'showLinks' : 'hideLinks'}`}>
+      <nav ref={navBarRef} className={`navBar ${viewNavBar ? 'showLinks' : 'hideLinks'} bg-color2`}>
         <ul className="flex w-full flex-col ml-5 gap-3">
           <li className="flex w-full">
             <button

@@ -15,6 +15,9 @@ export default {
         compte: "url('../src/assets/compte.png')",
         logout: "url('../src/assets/logout.png')",
         home: "url('../src/assets/home.png')",
+        comingSoon: "url('../src/assets/comingSoon.gif')",
+        prev: "url('../src/assets/prev.png')",
+        next: "url('../src/assets/next.png')",
       },
       maxWidth: {
         'login-gradient': '10px',

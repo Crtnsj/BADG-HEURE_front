@@ -1,14 +1,20 @@
 import { useState, useEffect } from 'react';
 
-const DisplayRetrospection = (props: any) => {
+const Retrospection = (props: any) => {
   const [actualSem, setActualSem] = useState([]);
   const [weekOffset, setWeekOffset] = useState(0);
+  const [weekNumber, setWeekNumber] = useState(0);
 
   const daysOfWeek = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'];
 
   useEffect(() => {
     const now = new Date();
     now.setDate(now.getDate() + weekOffset * 7);
+
+    const firstDayOfYear = new Date(now.getFullYear(), 0, 1);
+    const pastDaysOfYear = (now.getTime() - firstDayOfYear.getTime()) / 86400000;
+    const currentWeekNumber = Math.ceil((pastDaysOfYear + firstDayOfYear.getDay() + 1) / 7);
+    setWeekNumber(currentWeekNumber);
 
     const today = () => {
       const dayOfWeek = now.getDay();
@@ -57,17 +63,24 @@ const DisplayRetrospection = (props: any) => {
   };
 
   return (
-    <div>
-      <div>
-        <button onClick={handlePrevWeek}>Semaine précédente</button>
-        <button onClick={handleNextWeek}>Semaine suivante</button>
+    <div className="bg-gray-100 p-4 rounded">
+      <div className="flex justify-between mb-4">
+        <button
+          className="bg-prev bg-cover bg-center py-2 px-4 rounded"
+          onClick={handlePrevWeek}
+        ></button>
+        <p>Semaine : {weekNumber}</p>
+        <button
+          className="bg-next bg-cover bg-center py-2 px-4 rounded"
+          onClick={handleNextWeek}
+        ></button>
       </div>
-      <table className="border-solid border-2">
-        <thead className="border-solid border-2">
-          <tr className="border-solid border-2">
-            <th className="border-solid border-2">Jour</th>
+      <table className="border-collapse border border-gray-400">
+        <thead className="bg-color1">
+          <tr>
+            <th className="border border-gray-400 px-4 py-2">Jour</th>
             {[1, 2, 3, 4].map((numero) => (
-              <th key={numero} className="border-solid border-2">
+              <th key={numero} className="border border-gray-400 px-4 py-2 w-20">
                 {numero}
               </th>
             ))}
@@ -81,15 +94,17 @@ const DisplayRetrospection = (props: any) => {
 
             for (let i = 0; i < 4; i++) {
               if (matchingDates[i]) {
-                cells.push(<td className="border-solid border-2">{matchingDates[i].hour}</td>);
+                cells.push(
+                  <td className="border border-gray-400 px-4 py-2">{matchingDates[i].hour}</td>,
+                );
               } else {
-                cells.push(<td className="border-solid border-2"></td>);
+                cells.push(<td className="border border-gray-400 px-4 py-2"></td>);
               }
             }
 
             return (
-              <tr key={index} className="border-solid border-2">
-                <td className="border-solid border-2">
+              <tr key={index}>
+                <td className="border border-gray-400 px-4 py-2">
                   {daysOfWeek[index]} - {jour}
                 </td>
                 {cells}
@@ -102,4 +117,4 @@ const DisplayRetrospection = (props: any) => {
   );
 };
 
-export default DisplayRetrospection;
+export default Retrospection;

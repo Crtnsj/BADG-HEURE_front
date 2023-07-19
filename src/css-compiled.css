@@ -4,7 +4,6 @@
   left: -20rem;
   transition: transform 0.5s ease;
   min-height: 100vh;
-  background-color: #36403a;
   z-index: 1;
   color: white;
   display: flex;
@@ -31,6 +30,8 @@
 
 .menuBurger {
   z-index: 2;
+  width: 2rem;
+  margin-left: 1rem;
 }
 .menuBurger .burger-bar,
 .menuBurger .burger-bar::before,
@@ -39,7 +40,6 @@
   width: 2rem;
   background-color: #000;
   display: block;
-  margin-left: 1rem;
   transition: all 0.35s ease-in-out;
   border-radius: 1rem;
 }
@@ -49,7 +49,7 @@
 .menuBurger .burger-bar::before,
 .menuBurger .burger-bar::after {
   position: absolute;
-  left: 0;
+  left: 1rem;
   content: "";
   z-index: 2;
 }
