@@ -12,6 +12,7 @@ import AddBadg from './Components/Badgeage/AddBadg';
 import DisplayRetrospection from './Components/Badgeage/DisplayRetrospection';
 import ComingSoon from './Pages/ComingSoon';
 import DisplayRetrospectionAdmin from './Components/Badgeage/DisplayRetrospectionAdmin';
+import DisplayMyAccount from './Components/Account/DisplayMyAccount';
 
 const router = createBrowserRouter([
   {
@@ -52,7 +53,7 @@ const router = createBrowserRouter([
           </ProtectAdminRoutes>
         ),
       },
-      { path: '/home/myAccount', element: <ComingSoon /> },
+      { path: '/home/myAccount', element: <DisplayMyAccount /> },
       { path: '/home/declaration', element: <ComingSoon /> },
       { path: '/home/notification', element: <ComingSoon /> },
       { path: '/home/about', element: <ComingSoon /> },

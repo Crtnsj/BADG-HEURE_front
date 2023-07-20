@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -5,6 +6,7 @@ const NavBar = () => {
   const navigate = useNavigate();
 
   const [viewNavBar, setViewNavBar] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
   const navBarRef = useRef<HTMLDivElement>(null);
   const menuBurgerRef = useRef<HTMLButtonElement>(null);
 
@@ -12,54 +14,58 @@ const NavBar = () => {
     setViewNavBar(!viewNavBar);
   };
 
-  const handleClickOutside = (event: MouseEvent) => {
-    if (
-      navBarRef.current &&
-      !navBarRef.current.contains(event.target as Node) &&
-      menuBurgerRef.current &&
-      !menuBurgerRef.current.contains(event.target as Node)
-    ) {
-      setViewNavBar(false);
+  const handleClickLink = (path: string) => (e: React.MouseEvent) => {
+    if (path === '/') {
+      localStorage.removeItem('JWT');
     }
+    e.preventDefault();
+    navigate(path);
   };
 
   useEffect(() => {
+    const handleOutsideClick = (event: MouseEvent) => {
+      if (
+        navBarRef.current &&
+        !navBarRef.current.contains(event.target as Node) &&
+        menuBurgerRef.current &&
+        !menuBurgerRef.current.contains(event.target as Node)
+      ) {
+        setViewNavBar(false);
+      }
+    };
+
     if (viewNavBar) {
-      document.body.addEventListener('click', handleClickOutside);
+      document.body.addEventListener('click', handleOutsideClick);
     } else {
-      document.body.removeEventListener('click', handleClickOutside);
+      document.body.removeEventListener('click', handleOutsideClick);
     }
 
     return () => {
-      document.body.removeEventListener('click', handleClickOutside);
+      document.body.removeEventListener('click', handleOutsideClick);
     };
   }, [viewNavBar]);
 
-  const handleClickHome = (e: any) => {
-    e.preventDefault();
-    navigate('/home');
-  };
+  useEffect(() => {
+    const fetchIsAdmin = async () => {
+      try {
+        const response = await axios.get('http://localhost:3002/adminValidator', {
+          headers: { Authorization: `Bearer ${localStorage.getItem('JWT')}` },
+        });
+        setIsAdmin(response.data);
+      } catch (error) {
+        setIsAdmin(false);
+      }
+    };
+    fetchIsAdmin();
+  }, []);
 
-  const handleClickAbout = (e: any) => {
-    e.preventDefault();
-    navigate('/home/about');
-  };
-  const handleClickMyAccount = (e: any) => {
-    e.preventDefault();
-    navigate('/home/myAccount');
-  };
-  const handleClickDeconnection = (e: any) => {
-    e.preventDefault();
-    localStorage.removeItem('JWT');
-    navigate('/');
-  };
   return (
     <>
       <nav ref={navBarRef} className={`navBar ${viewNavBar ? 'showLinks' : 'hideLinks'} bg-color2`}>
         <ul className="flex w-full flex-col ml-5 gap-3">
           <li className="flex w-full">
             <button
-              onClick={handleClickHome}
+              onClick={handleClickLink('/home')}
               className="flex w-full gap-3 font-Montserrat flex-wrap shrink-0"
             >
               <div className="bg-home bg-cover bg-center w-7 aspect-square"></div>Accueil
@@ -67,19 +73,32 @@ const NavBar = () => {
           </li>
           <li className="flex w-full">
             <button
-              onClick={handleClickAbout}
+              onClick={handleClickLink('/home/about')}
               className="flex w-full gap-3 font-Montserrat flex-wrap shrink-0"
             >
               <div className="bg-info bg-cover bg-center w-7 aspect-square"></div>A propos
             </button>
           </li>
           <li className="flex w-full">
-            <button onClick={handleClickMyAccount} className="flex w-full gap-3 font-Montserrat">
+            <button
+              onClick={handleClickLink('/home/myAccount')}
+              className="flex w-full gap-3 font-Montserrat"
+            >
               <div className="bg-compte bg-cover bg-center w-7 h-7 aspect-square"></div>Mon compte
             </button>
           </li>
+          {isAdmin && (
+            <li className="flex w-full">
+              <button
+                onClick={handleClickLink('/home/users')}
+                className="flex w-full gap-3 font-Montserrat"
+              >
+                <div className="bg-logout bg-cover bg-center w-7 aspect-square"></div>Utilisateurs
+              </button>
+            </li>
+          )}
           <li className="flex w-full">
-            <button onClick={handleClickDeconnection} className="flex w-full gap-3 font-Montserrat">
+            <button onClick={handleClickLink('/')} className="flex w-full gap-3 font-Montserrat">
               <div className="bg-logout bg-cover bg-center w-7 aspect-square"></div>Déconnexion
             </button>
           </li>
