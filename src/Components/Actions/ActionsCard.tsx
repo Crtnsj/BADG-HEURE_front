@@ -22,6 +22,14 @@ const ActionCard = (props: Props) => {
           <p>Badger ma présence</p>
         </>
       )}
+      {props.actionType === 'retrospectionAdmin' && (
+        <>
+          <div className={`bg-cover bg-center bg-eye w-2/4 aspect-square`}></div>
+          <p>
+            Rétrospection <strong>ADMIN</strong>
+          </p>
+        </>
+      )}
       {props.actionType === 'retrospection' && (
         <>
           <div className={`bg-cover bg-center bg-eye w-2/4 aspect-square`}></div>
