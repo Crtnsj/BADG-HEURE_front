@@ -63,7 +63,7 @@ const Retrospection = (props: any) => {
   };
 
   return (
-    <div className="bg-gray-100 p-4 rounded">
+    <div className="bg-color4 p-4 rounded">
       <div className="flex justify-between mb-4">
         <button
           className="bg-prev bg-cover bg-center py-2 px-4 rounded"
@@ -95,10 +95,12 @@ const Retrospection = (props: any) => {
             for (let i = 0; i < 4; i++) {
               if (matchingDates[i]) {
                 cells.push(
-                  <td className="border border-gray-400 px-4 py-2">{matchingDates[i].hour}</td>,
+                  <td key={i} className="border border-gray-400 px-4 py-2">
+                    {matchingDates[i].hour}
+                  </td>,
                 );
               } else {
-                cells.push(<td className="border border-gray-400 px-4 py-2"></td>);
+                cells.push(<td key={i} className="border border-gray-400 px-4 py-2"></td>);
               }
             }
 

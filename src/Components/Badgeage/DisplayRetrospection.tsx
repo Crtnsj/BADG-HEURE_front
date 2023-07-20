@@ -11,7 +11,7 @@ const DisplayRetrospection = () => {
         const response = await axios.get('http://localhost:3002/badg/viewBadg', {
           headers: { Authorization: `Bearer ${localStorage.getItem('JWT')}` },
         });
-        setBadgeages(response.data.dates);
+        setBadgeages(response.data);
       } catch (error) {
         console.error(error);
       }
