@@ -87,16 +87,6 @@ const NavBar = () => {
               <div className="bg-compte bg-cover bg-center w-7 h-7 aspect-square"></div>Mon compte
             </button>
           </li>
-          {isAdmin && (
-            <li className="flex w-full">
-              <button
-                onClick={handleClickLink('/home/users')}
-                className="flex w-full gap-3 font-Montserrat"
-              >
-                <div className="bg-logou bg-cover bg-center w-7 aspect-square"></div>Utilisateurs
-              </button>
-            </li>
-          )}
           <li className="flex w-full">
             <button onClick={handleClickLink('/')} className="flex w-full gap-3 font-Montserrat">
               <div className="bg-logout bg-cover bg-center w-7 aspect-square"></div>Déconnexion
