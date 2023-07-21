@@ -13,6 +13,7 @@ export default {
         enveloppe: "url('../src/assets/enveloppe.png')",
         info: "url('../src/assets/info.png')",
         compte: "url('../src/assets/compte.png')",
+        annuaire: "url('../src/assets/annuaire.png')",
         logout: "url('../src/assets/logout.png')",
         home: "url('../src/assets/home.png')",
         comingSoon: "url('../src/assets/comingSoon.gif')",
