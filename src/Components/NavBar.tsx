@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -5,6 +6,7 @@ const NavBar = () => {
   const navigate = useNavigate();
 
   const [viewNavBar, setViewNavBar] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
   const navBarRef = useRef<HTMLDivElement>(null);
   const menuBurgerRef = useRef<HTMLButtonElement>(null);
 
@@ -43,6 +45,20 @@ const NavBar = () => {
     };
   }, [viewNavBar]);
 
+  useEffect(() => {
+    const fetchIsAdmin = async () => {
+      try {
+        const response = await axios.get('http://localhost:3002/adminValidator', {
+          headers: { Authorization: `Bearer ${localStorage.getItem('JWT')}` },
+        });
+        setIsAdmin(response.data);
+      } catch (error) {
+        setIsAdmin(false);
+      }
+    };
+    fetchIsAdmin();
+  }, []);
+
   return (
     <>
       <nav ref={navBarRef} className={`navBar ${viewNavBar ? 'showLinks' : 'hideLinks'} bg-color2`}>
@@ -71,6 +87,16 @@ const NavBar = () => {
               <div className="bg-compte bg-cover bg-center w-7 h-7 aspect-square"></div>Mon compte
             </button>
           </li>
+          {isAdmin && (
+            <li className="flex w-full">
+              <button
+                onClick={handleClickLink('/home/users')}
+                className="flex w-full gap-3 font-Montserrat"
+              >
+                <div className="bg-logout bg-cover bg-center w-7 aspect-square"></div>Utilisateurs
+              </button>
+            </li>
+          )}
           <li className="flex w-full">
             <button onClick={handleClickLink('/')} className="flex w-full gap-3 font-Montserrat">
               <div className="bg-logout bg-cover bg-center w-7 aspect-square"></div>Déconnexion
