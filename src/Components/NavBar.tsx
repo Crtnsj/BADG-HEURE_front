@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -6,7 +5,6 @@ const NavBar = () => {
   const navigate = useNavigate();
 
   const [viewNavBar, setViewNavBar] = useState(false);
-  const [isAdmin, setIsAdmin] = useState(false);
   const navBarRef = useRef<HTMLDivElement>(null);
   const menuBurgerRef = useRef<HTMLButtonElement>(null);
 
@@ -44,20 +42,6 @@ const NavBar = () => {
       document.body.removeEventListener('click', handleOutsideClick);
     };
   }, [viewNavBar]);
-
-  useEffect(() => {
-    const fetchIsAdmin = async () => {
-      try {
-        const response = await axios.get('http://localhost:3002/adminValidator', {
-          headers: { Authorization: `Bearer ${localStorage.getItem('JWT')}` },
-        });
-        setIsAdmin(response.data);
-      } catch (error) {
-        setIsAdmin(false);
-      }
-    };
-    fetchIsAdmin();
-  }, []);
 
   return (
     <>
