@@ -13,6 +13,7 @@ import DisplayRetrospection from './Components/Badgeage/DisplayRetrospection';
 import ComingSoon from './Pages/ComingSoon';
 import DisplayRetrospectionAdmin from './Components/Badgeage/DisplayRetrospectionAdmin';
 import DisplayMyAccount from './Components/Account/DisplayMyAccount';
+import DisplayUserManager from './Components/UserManager/DisplayUserManager';
 
 const router = createBrowserRouter([
   {
@@ -62,6 +63,14 @@ const router = createBrowserRouter([
         element: (
           <ProtectAdminRoutes>
             <AddNews />
+          </ProtectAdminRoutes>
+        ),
+      },
+      {
+        path: '/home/userManager',
+        element: (
+          <ProtectAdminRoutes>
+            <DisplayUserManager />
           </ProtectAdminRoutes>
         ),
       },

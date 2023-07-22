@@ -8,7 +8,6 @@ const DisplayMyAccount = () => {
     firstName: string;
     email: string;
     isAdmin: boolean;
-    // Ajouter d'autres propriétés si nécessaire
   };
   const [accountData, setAccountData] = useState<AccountData>({
     name: '',

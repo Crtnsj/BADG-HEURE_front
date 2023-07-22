@@ -90,10 +90,10 @@ const NavBar = () => {
           {isAdmin && (
             <li className="flex w-full">
               <button
-                onClick={handleClickLink('/home/users')}
+                onClick={handleClickLink('/home/userManager')}
                 className="flex w-full gap-3 font-Montserrat"
               >
-                <div className="bg-logout bg-cover bg-center w-7 aspect-square"></div>Utilisateurs
+                <div className="bg-annuaire bg-cover bg-center w-7 aspect-square"></div>Utilisateurs
               </button>
             </li>
           )}
