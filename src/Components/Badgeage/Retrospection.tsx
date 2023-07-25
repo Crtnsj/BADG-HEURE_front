@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 
 const Retrospection = (props: any) => {
-  const [actualSem, setActualSem] = useState([]);
-  const [weekOffset, setWeekOffset] = useState(0);
-  const [weekNumber, setWeekNumber] = useState(0);
+  const [actualSem, setActualSem] = useState<string[]>([]);
+  const [weekOffset, setWeekOffset] = useState<number>(0);
+  const [weekNumber, setWeekNumber] = useState<number>(0);
 
   const daysOfWeek = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'];
 
@@ -23,7 +23,7 @@ const Retrospection = (props: any) => {
     };
 
     const todayInfo = today();
-    const otherDays: any = [];
+    const otherDays = [];
 
     for (let i = 0; i < daysOfWeek.length; i++) {
       const day = todayInfo.day - todayInfo.dayOfWeek + i + 1;

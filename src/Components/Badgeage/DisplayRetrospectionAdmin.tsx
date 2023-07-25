@@ -2,6 +2,12 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Retrospection from './Retrospection';
 
+type User = {
+  _id: string;
+  name: string;
+  firstName: string;
+};
+
 const DisplayRetrospectionAdmin = () => {
   const [badgeages, setBadgeages] = useState([]);
   const [users, setUsers] = useState([]);
@@ -48,7 +54,7 @@ const DisplayRetrospectionAdmin = () => {
           className="font-Montserrat bg-color4 ml-2 rounded transition-all"
         >
           <option value="">Sélectionnez un utilisateur</option>
-          {users.map((user: any) => (
+          {users.map((user: User) => (
             <option key={user._id} value={user._id}>
               {user.name} {user.firstName}
             </option>

@@ -1,9 +1,13 @@
 import { useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import axios from 'axios';
 
+type Props = {
+  children: ReactNode;
+};
+
 //composant servant à rendres les composant enfants uniquement si le JWT est valide
-const ProtectRoutes = ({ children }: any) => {
+const ProtectRoutes = ({ children }: Props) => {
   const navigate = useNavigate();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 

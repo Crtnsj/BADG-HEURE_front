@@ -1,8 +1,12 @@
-import { useEffect, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import axios from 'axios';
 
+type Props = {
+  children: ReactNode;
+};
+
 // Composant ProtectAdminRoutes qui vérifie si l'utilisateur est un administrateur avant de rendre le contenu de l'enfant (children) passé en tant que prop.
-const ProtectAdminRoutes = ({ children }: any) => {
+const ProtectAdminRoutes = ({ children }: Props) => {
   const [isAdmin, setIsAdmin] = useState(false);
 
   // Verifie si l'utilisateur est admin ou non est met à jour le useState isAdmin avec la valeur de la reponse de l'API

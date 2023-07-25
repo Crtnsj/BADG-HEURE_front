@@ -1,8 +1,7 @@
 import axios from 'axios';
 
 const AddBadg = () => {
-  const handleClick = (e: any) => {
-    e.preventDefault();
+  const handleClick = () => {
     const data = { date: Date.now() };
     const now = new Date();
     const count = parseInt(localStorage.getItem('count') || '0');

@@ -60,4 +60,10 @@
   transform: translateY(0.5rem);
 }
 
+.addUserButton {
+  position: relative;
+  top: 0px;
+  right: 0px;
+}
+
 /*# sourceMappingURL=css-compiled.css.map */
