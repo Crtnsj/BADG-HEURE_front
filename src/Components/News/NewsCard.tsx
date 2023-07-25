@@ -8,8 +8,8 @@ type Props = {
 const NewsCard = ({ type, content, important }: Props) => {
   if (!important) {
     return (
-      <div className=" p-2 w-1/5 bg-color3 rounded m-2">
-        <h1 className="text-black font-Montserrat font-bold text-center block border-b-2 border-color3">
+      <div className=" p-5 sm:w-1/5 min-w-10rem bg-color3 rounded flex flex-col items-center">
+        <h1 className="text-black font-Montserrat font-bold text-center block border-b-2 border-color3  ">
           {type}
         </h1>
         <p className="font-Montserrat text-center">{content}</p>
@@ -17,7 +17,7 @@ const NewsCard = ({ type, content, important }: Props) => {
     );
   } else {
     return (
-      <div className="shadow-Important p-2 w-1/5 bg-color3 rounded m-2  ">
+      <div className="shadow-Important p-5 sm:w-1/5 min-w-10rem bg-color3 flex flex-col items-center">
         <h1 className="text-black font-Montserrat font-bold text-center block border-b-2 border-color3">
           {type}
         </h1>

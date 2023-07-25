@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import NewsCard from './NewsCard';
 import { useNavigate } from 'react-router-dom';
+import Title from '../Other/Title';
 
 type data = {
   type: string;
@@ -41,11 +42,10 @@ const News = () => {
   //Affiche les news en allant chercher le composant NewsCard et en lui passant en props les informations.
   //Ajoute le bouton pour ajouter des news si l'utilisateur est admin
   return (
-    <div className="flex flex-col justify-center items-center m-4 gap-4">
-      <div className="p-2 rounded w-1/2 text-center font-Montserrat font-extrabold bg-color1">
-        Quelques infos RH en brefs
-      </div>
-      <div className="flex flex-row gap-1 flex-wrap justify-around w-5/6">
+    <div className="flex flex-col justify-center items-center m-4 gap-4 ">
+      <Title type="infos" />
+
+      <div className="flex flex-col gap-3 flex-wrap justify-around w-5/6 max-w-5xl sm:flex-row">
         {news.map((info, index) => (
           <NewsCard
             key={index}

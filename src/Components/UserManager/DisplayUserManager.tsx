@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import UserManager from './UserManager';
 import SignUp from '../Log/SignUp';
+import Title from '../Other/Title';
 
 const DisplayUserManager = () => {
   const [users, setUsers] = useState([]);
@@ -56,9 +57,7 @@ const DisplayUserManager = () => {
     <>
       <div className="flex flex-col justify-center items-center m-4 gap-4">
         <div className=" w-1/2">
-          <div className="p-2 rounded  text-center font-Montserrat font-extrabold bg-color1">
-            Gestion des Utilisateurs
-          </div>
+          <Title type="userManager" />
           <button onClick={handleClickAdd} className="addUserButton">
             Ajouter un utilisateur
           </button>

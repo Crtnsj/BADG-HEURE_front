@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Title from '../Other/Title';
 
 const AddBadg = () => {
   const handleClick = () => {
@@ -54,9 +55,7 @@ const AddBadg = () => {
   return (
     <>
       <div className="flex justify-center items-center mt-4">
-        <div className="p-2 rounded w-1/2 text-center font-Montserrat font-extrabold bg-color1">
-          Page de Badgeage
-        </div>
+        <Title type="badgPage" />
       </div>
       <div className="flex justify-center items-center mt-8 gap-4 ">
         <div className="flex bg-color3 p-4 rounded w-1/3 justify-around">

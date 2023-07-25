@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Retrospection from './Retrospection';
+import Title from '../Other/Title';
 
 type User = {
   _id: string;
@@ -44,9 +45,7 @@ const DisplayRetrospectionAdmin = () => {
 
   return (
     <div className="flex flex-col justify-center items-center m-4 gap-4">
-      <div className="p-2 rounded w-1/2 text-center font-Montserrat font-extrabold bg-color1">
-        Page de Retrospection
-      </div>
+      <Title type="retrospection" />
       <div className="flex">
         <p className="font-Montserrat">Calendrier de :</p>
         <select

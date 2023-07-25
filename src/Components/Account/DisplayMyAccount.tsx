@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import AccountCard from './AccountCard';
 import axios from 'axios';
+import Title from '../Other/Title';
 
 const DisplayMyAccount = () => {
   type AccountData = {
@@ -30,9 +31,7 @@ const DisplayMyAccount = () => {
   return (
     <>
       <div className="flex justify-center items-center m-4">
-        <div className="p-2 rounded w-1/2 text-center font-Montserrat font-extrabold bg-color1">
-          Voici vos informations personnelles
-        </div>
+        <Title type="userPage" />
       </div>
       <AccountCard
         nom={accountData.name}

@@ -32,7 +32,9 @@ const AddNews = () => {
 
   return (
     <div className="flex flex-col justify-center items-center m-4 gap-4">
-      <div className={`p-2 rounded w-1/2 text-center font-Montserrat font-extrabold bg-color1`}>
+      <div
+        className={`p-2 rounded w-1/2 min-w-64 text-center font-Montserrat font-extrabold bg-color1`}
+      >
         Ajouter une news
       </div>
       <form onSubmit={handleSubmit}>

@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import ActionCard from './ActionsCard';
+import Title from '../Other/Title';
 
 const DisplayActions = () => {
   const [isAdmin, setIsAdmin] = useState(false);
@@ -24,15 +25,12 @@ const DisplayActions = () => {
   // Utiliser la constante actionType dans l'opérateur ternaire
   return (
     <div className="flex flex-col justify-center items-center m-4 gap-4">
-      <div className="p-2 rounded w-1/2 text-center font-Montserrat font-extrabold bg-color1">
-        Vos actions
-      </div>
-      <div className="w-1/2 flex justify-center">
-        <div className="flex flex-row gap-1 flex-wrap justify-around w-5/6">
-          {actionType.map((info, index) => (
-            <ActionCard key={index} actionType={info} />
-          ))}
-        </div>
+      <Title type="action" />
+
+      <div className="flex flex-row gap-3 flex-wrap justify-around w-5/6 max-w-4xl">
+        {actionType.map((info, index) => (
+          <ActionCard key={index} actionType={info} />
+        ))}
       </div>
     </div>
   );
