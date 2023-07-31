@@ -1,8 +1,8 @@
-import { ReactNode, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 type Props = {
-  children: ReactNode;
+  children: any;
 };
 
 // Composant ProtectAdminRoutes qui vérifie si l'utilisateur est un administrateur avant de rendre le contenu de l'enfant (children) passé en tant que prop.

@@ -1,3 +1,4 @@
+$color1: #dcf2e6;
 .navBar {
   position: absolute;
   top: -100vh;
@@ -67,8 +68,26 @@
   }
 }
 
-.addUserButton {
-  position: relative;
-  top: 0px;
-  right: 0px;
+.test {
+  &2 {
+    transition: width 0.5s ease-in-out;
+    background-color: $color1;
+    width: 0;
+    height: 2rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: center;
+    align-items: center;
+    transform-origin: left;
+  }
+  &3 {
+    left: 7.3%;
+    top: 7.3%;
+  }
+  &:hover > .test2 {
+    width: 8rem;
+  }
+  &:hover > .test3 {
+    opacity: 0;
+  }
 }

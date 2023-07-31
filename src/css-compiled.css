@@ -60,10 +60,26 @@
   transform: translateY(0.5rem);
 }
 
-.addUserButton {
-  position: relative;
-  top: 0px;
-  right: 0px;
+.test2 {
+  transition: width 0.5s ease-in-out;
+  background-color: #dcf2e6;
+  width: 0;
+  height: 2rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: center;
+  align-items: center;
+  transform-origin: left;
+}
+.test3 {
+  left: 7.3%;
+  top: 7.3%;
+}
+.test:hover > .test2 {
+  width: 8rem;
+}
+.test:hover > .test3 {
+  opacity: 0;
 }
 
 /*# sourceMappingURL=css-compiled.css.map */

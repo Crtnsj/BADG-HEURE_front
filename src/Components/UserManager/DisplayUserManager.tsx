@@ -56,10 +56,13 @@ const DisplayUserManager = () => {
   return (
     <>
       <div className="flex flex-col justify-center items-center m-4 gap-4">
-        <div className=" w-1/2">
+        <div className="flex flex-col justify-center items-center w-full gap-4">
           <Title type="userManager" />
-          <button onClick={handleClickAdd} className="addUserButton">
-            Ajouter un utilisateur
+          <button
+            onClick={handleClickAdd}
+            className="bg-color1 w-10  h-10 rounded-full p-2 md:absolute md:right-20vw "
+          >
+            <div className="bg-plus bg-center bg-cover w-full h-full"></div>
           </button>
         </div>
 

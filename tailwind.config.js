@@ -19,6 +19,7 @@ export default {
         comingSoon: "url('../src/assets/comingSoon.gif')",
         prev: "url('../src/assets/prev.png')",
         next: "url('../src/assets/next.png')",
+        plus: "url('../src/assets/plus.png')",
       },
       maxWidth: {
         'login-gradient': '10px',
@@ -40,6 +41,9 @@ export default {
         '10rem': '8rem',
       },
       minHeight: { '4/5': '80%' },
+      spacing: {
+        '15vw': '15vw',
+      },
     },
   },
   plugins: [],
