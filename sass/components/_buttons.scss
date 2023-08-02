@@ -6,3 +6,54 @@
   height: 5rem;
   align-items: center;
 }
+
+.btnAddElem {
+  position: absolute;
+  left: 76vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__left {
+    width: 1.5rem;
+    height: 3rem;
+    border-radius: 3rem 0 0 3rem;
+    background-color: $color1;
+  }
+  &__plus {
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    height: 2rem;
+    width: 2rem;
+    background-image: url('../src/assets/plus.png');
+  }
+  &__anim {
+    position: absolute;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-origin: left;
+    transform: scaleX(0);
+    background-color: $color1;
+    height: 3rem;
+    border-radius: 0 3rem 3rem 0;
+    padding-right: 1.5rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  &__right {
+    width: 1.5rem;
+    height: 3rem;
+    border-radius: 0 3rem 3rem 0;
+    background-color: $color1;
+  }
+  &:hover {
+    & > .btnAddElem__plus {
+      animation: btnAdd_icon 91ms ease-in-out both;
+    }
+    & > .btnAddElem__anim {
+      animation: btnAdd 250ms ease-in-out both;
+    }
+  }
+}

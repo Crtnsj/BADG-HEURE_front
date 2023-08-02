@@ -21,7 +21,7 @@ const ActionCard = (props: Props) => {
       )}
       {props.actionType === 'retrospectionAdmin' && (
         <>
-          <div className=" actionCard__pic actionCard__pic--eye"></div>
+          <div className="actionCard__pic actionCard__pic--eye"></div>
           <p>
             Rétrospection <strong>ADMIN</strong>
           </p>

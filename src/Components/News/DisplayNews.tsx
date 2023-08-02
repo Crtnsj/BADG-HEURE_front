@@ -45,8 +45,13 @@ const News = () => {
       <div className="flex flex-col justify-center items-center w-full gap-4">
         <Title type="infos" />
         {isAdmin ? (
-          <button onClick={handleClickAddNews} className="flex absolute top-10  md:right-15vw test">
-            <div>Ajouter une news</div>
+          <button onClick={handleClickAddNews} className="btnAddElem">
+            <div className="btnAddElem__left"></div>
+            <div className="btnAddElem__plus"></div>
+            <div className="btnAddElem__anim">
+              <span className="btnAddElem__anim--text">Ajouter une news</span>
+            </div>
+            <div className="btnAddElem__right"></div>
           </button>
         ) : (
           <></>
