@@ -24,10 +24,10 @@ const DisplayActions = () => {
 
   // Utiliser la constante actionType dans l'opérateur ternaire
   return (
-    <div className="flex flex-col justify-center items-center m-4 gap-4">
+    <div className="layoutPages">
       <Title type="action" />
 
-      <div className="flex flex-row gap-3 flex-wrap justify-around w-5/6 max-w-4xl">
+      <div className="layoutCard">
         {actionType.map((info, index) => (
           <ActionCard key={index} actionType={info} />
         ))}

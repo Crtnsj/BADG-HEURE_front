@@ -31,7 +31,7 @@ const SignIn = () => {
   //formulaire de connexion
   return (
     <div className="bg-white p-4 rounded-lg gap-1">
-      <h1 className="font-Montserrat font-bold">Identiez-vous</h1>
+      <h1 className="font-bold">Identiez-vous</h1>
       <form onSubmit={handleSubmit}>
         <div>
           <input type="text" name="email" onChange={handleChangeEmail} value={email} />

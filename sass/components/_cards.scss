@@ -1,0 +1,117 @@
+.accountCard {
+  display: flex;
+  background-color: $color4;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  justify-content: center;
+  gap: 0.75rem;
+  &__initials {
+    font-size: 3rem;
+    line-height: 1;
+    font-weight: 900;
+    background-color: $color1;
+    color: 900;
+    border-radius: 9999px;
+    padding: 0.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6rem;
+    width: 6rem;
+  }
+}
+
+.actionCard {
+  padding: 0.25rem;
+  width: 100%;
+  min-width: 8rem;
+  background-color: $color3;
+  border-radius: 0.25rem;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  @media (min-width: 400px) {
+    flex-direction: column;
+    width: 20%;
+    padding: 1.25rem;
+    justify-content: center;
+  }
+  &__pic {
+    background-size: cover;
+    background-position: center;
+    width: 50%;
+    max-width: 5rem;
+    aspect-ratio: 1 / 1;
+    &--clock {
+      background-image: url('../src/assets/logo_hour.png');
+    }
+    &--eye {
+      background-image: url('../src/assets/eye.png');
+    }
+    &--retard {
+      background-image: url('../src/assets/retard.png');
+    }
+    &--enveloppe {
+      background-image: url('../src/assets/enveloppe.png');
+    }
+  }
+}
+
+.layoutCard {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 83%;
+  max-width: 56rem;
+  flex-direction: column;
+  @media (min-width: 768px) {
+    gap: 2rem;
+  }
+  @media (min-width: 400px) {
+    flex-direction: row;
+  }
+}
+
+.newsCard {
+  padding: 1.25rem;
+  min-width: 8rem;
+  background-color: $color3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  @media (min-width: 768px) {
+    width: 20%;
+  }
+  &__title {
+    font-weight: 700;
+    text-align: center;
+    display: block;
+    border-bottom: 2px solid $color2;
+    width: 100%;
+  }
+}
+
+.addBadg {
+  display: flex;
+  background-color: $color3;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  width: 33%;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+  &__pic {
+    background-size: cover;
+    background-position: center;
+    width: 16%;
+    aspect-ratio: 1 / 1;
+    background-image: url('../src/assets/logo_hour.png');
+  }
+  &__text {
+    text-align: center;
+  }
+}

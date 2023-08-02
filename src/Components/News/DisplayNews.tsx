@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import NewsCard from './NewsCard';
-import { useNavigate } from 'react-router-dom';
 import Title from '../Other/Title';
 import AddNews from './AddNews';
 
@@ -42,15 +41,12 @@ const News = () => {
   //Affiche les news en allant chercher le composant NewsCard et en lui passant en props les informations.
   //Ajoute le bouton pour ajouter des news si l'utilisateur est admin
   return (
-    <div className="flex flex-col justify-center items-center m-4 gap-4 ">
+    <div className="layoutPages ">
       <div className="flex flex-col justify-center items-center w-full gap-4">
         <Title type="infos" />
         {isAdmin ? (
           <button onClick={handleClickAddNews} className="flex absolute top-10  md:right-15vw test">
-            <div className="rounded-l-full w-4 h-8 bg-color1"></div>
-            <div className="test2">Ajouter une news</div>
-            <div className=" h-5/6 w-5/6  absolute bg-plus bg-cover bg-center test3"></div>
-            <div className="rounded-r-full w-4 h-8 bg-color1"></div>
+            <div>Ajouter une news</div>
           </button>
         ) : (
           <></>
@@ -59,7 +55,7 @@ const News = () => {
       {inAdd ? (
         <AddNews />
       ) : (
-        <div className="flex flex-col gap-3 flex-wrap justify-around w-5/6 max-w-5xl md:flex-row">
+        <div className="layoutCard layoutCard--News">
           {news.map((info, index) => (
             <NewsCard
               key={index}

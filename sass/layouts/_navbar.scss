@@ -1,0 +1,95 @@
+.navBar {
+  position: absolute;
+  top: -100vh;
+  left: -20rem;
+  transition: transform 0.5s ease;
+  min-height: 100vh;
+  z-index: 1;
+  color: white;
+  display: flex;
+  padding-top: 3rem;
+  width: 15rem;
+
+  &.showLinks {
+    top: 0;
+    left: 0;
+    transition: all 0.35s ease-out;
+
+    + .menuBurger .burger-bar::before {
+      transform: rotate(45deg);
+      background-color: #fff;
+    }
+    + .menuBurger .burger-bar::after {
+      transform: rotate(-45deg);
+      background-color: #fff;
+    }
+    + .menuBurger .burger-bar {
+      background-color: transparent;
+      width: 0;
+    }
+  }
+  &__link {
+    display: flex;
+    width: 100%;
+    gap: 0.75rem;
+    flex-shrink: 0;
+  }
+  &__pic {
+    background-size: cover;
+    background-position: center;
+    width: 1.75rem;
+    aspect-ratio: 1 / 1;
+    &--home {
+      background-image: url('../src/assets/home.png');
+    }
+    &--info {
+      background-image: url('../src/assets/info.png');
+    }
+    &--account {
+      background-image: url('../src/assets/account.png');
+    }
+    &--annuaire {
+      background-image: url('../src/assets/annuaire.png');
+    }
+    &--logout {
+      background-image: url('../src/assets/logout.png');
+    }
+  }
+}
+
+.menuBurger {
+  z-index: 2;
+  width: 2rem;
+  margin-left: 1rem;
+
+  .burger-bar,
+  .burger-bar::before,
+  .burger-bar::after {
+    height: 0.25rem;
+    width: 2rem;
+    background-color: #000;
+    display: block;
+    transition: all 0.35s ease-in-out;
+    border-radius: 1rem;
+  }
+
+  .burger-bar {
+    visibility: visible;
+  }
+
+  .burger-bar::before,
+  .burger-bar::after {
+    position: absolute;
+    left: 1rem;
+    content: '';
+    z-index: 2;
+  }
+
+  .burger-bar::before {
+    transform: translateY(-0.5rem);
+  }
+
+  .burger-bar::after {
+    transform: translateY(0.5rem);
+  }
+}

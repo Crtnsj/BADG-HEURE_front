@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Title from '../Other/Title';
 
 const AddNews = () => {
   const [type, setType] = useState('');
@@ -31,27 +32,23 @@ const AddNews = () => {
   const handleChangeImportant = (e: any) => setImportant(e.target.checked);
 
   return (
-    <div className="flex flex-col justify-center items-center m-4 gap-4">
-      <div
-        className={`p-2 rounded w-1/2 min-w-64 text-center font-Montserrat font-extrabold bg-color1`}
-      >
-        Ajouter une news
-      </div>
+    <div className="layoutPages">
+      <Title type="addNews" />
       <form onSubmit={handleSubmit}>
         <div>
-          <label className="font-Montserrat">
+          <label>
             Type <br />
             <input type="text" name="type" onChange={handleChangeType} value={type} />
           </label>
         </div>
         <div>
-          <label className="font-Montserrat">
+          <label>
             Contenu du message <br />
             <textarea name="content" rows={5} onChange={handleChangeContent} value={content} />
           </label>
         </div>
         <div className="flex gap-3">
-          <label className="font-Montserrat">Important</label>
+          <label>Important</label>
           <input
             type="checkbox"
             name="important"
@@ -60,7 +57,7 @@ const AddNews = () => {
           />
         </div>
         <div className="flex justify-center m-2 ">
-          <button className="bg-color2 text-white p-1 rounded-md font-Montserrat">Ajouter</button>
+          <button className="bg-color2 text-white p-1 rounded-md ">Ajouter</button>
         </div>
       </form>
     </div>

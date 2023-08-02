@@ -44,14 +44,11 @@ const DisplayRetrospectionAdmin = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center m-4 gap-4">
+    <div className="layoutPages">
       <Title type="retrospection" />
       <div className="flex">
-        <p className="font-Montserrat">Calendrier de :</p>
-        <select
-          onChange={handleChangeUser}
-          className="font-Montserrat bg-color4 ml-2 rounded transition-all"
-        >
+        <p>Calendrier de :</p>
+        <select onChange={handleChangeUser} className="bg-color4 ml-2 rounded">
           <option value="">Sélectionnez un utilisateur</option>
           {users.map((user: User) => (
             <option key={user._id} value={user._id}>

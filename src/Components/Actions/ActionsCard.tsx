@@ -12,19 +12,16 @@ const ActionCard = (props: Props) => {
   };
 
   return (
-    <button
-      onClick={handleClick}
-      className="p-5 w-1/5 min-w-10rem bg-color3 rounded text-center flex flex-col justify-center items-center"
-    >
+    <button onClick={handleClick} className="actionCard">
       {props.actionType === 'badgeage' && (
         <>
-          <div className={`bg-cover bg-center bg-logo_hour w-2/4 aspect-square`}></div>
+          <div className=" actionCard__pic actionCard__pic--clock"></div>
           <p>Badger ma présence</p>
         </>
       )}
       {props.actionType === 'retrospectionAdmin' && (
         <>
-          <div className={`bg-cover bg-center bg-eye w-2/4 aspect-square`}></div>
+          <div className=" actionCard__pic actionCard__pic--eye"></div>
           <p>
             Rétrospection <strong>ADMIN</strong>
           </p>
@@ -32,19 +29,19 @@ const ActionCard = (props: Props) => {
       )}
       {props.actionType === 'retrospection' && (
         <>
-          <div className={`bg-cover bg-center bg-eye w-2/4 aspect-square`}></div>
+          <div className=" actionCard__pic actionCard__pic--eye"></div>
           <p>Rétrospection</p>
         </>
       )}
       {props.actionType === 'declaration' && (
         <>
-          <div className={`bg-cover bg-center bg-retard w-2/4 aspect-square`}></div>
+          <div className=" actionCard__pic actionCard__pic--retard"></div>
           <p>Déclaration de présence</p>
         </>
       )}
       {props.actionType === 'notification' && (
         <>
-          <div className={`bg-cover bg-center bg-enveloppe w-2/4 aspect-square`}></div>
+          <div className=" actionCard__pic actionCard__pic--enveloppe"></div>
           <p>Notifications</p>
         </>
       )}

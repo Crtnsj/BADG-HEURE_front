@@ -30,7 +30,7 @@ const DisplayMyAccount = () => {
 
   return (
     <>
-      <div className="flex justify-center items-center m-4">
+      <div className="layoutPages">
         <Title type="userPage" />
       </div>
       <AccountCard

@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Retrospection from './Retrospection';
+import Title from '../Other/Title';
 
 const DisplayRetrospection = () => {
   const [badgeages, setBadgeages] = useState([]);
@@ -20,10 +21,8 @@ const DisplayRetrospection = () => {
   }, []);
 
   return (
-    <div className="flex flex-col justify-center items-center m-4 gap-4">
-      <div className="p-2 rounded w-1/2 min-w-64 text-center font-Montserrat font-extrabold bg-color1">
-        Page de Retrospection
-      </div>
+    <div className="layoutPages">
+      <Title type="retrospection" />
       <Retrospection dates={badgeages} />
     </div>
   );

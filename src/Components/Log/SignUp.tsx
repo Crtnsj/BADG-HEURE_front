@@ -33,7 +33,7 @@ const SignUp = () => {
 
   return (
     <div className="bg-white p-4 rounded-lg gap-1">
-      <h1 className="font-Montserrat font-bold mb-4 text-center">Inscrivez-vous</h1>
+      <h1 className="font-bold mb-4 text-center">Inscrivez-vous</h1>
       <form onSubmit={handleSubmit}>
         <div>
           <label>

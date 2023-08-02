@@ -70,11 +70,8 @@ const DisplayUserManager = () => {
           <SignUp />
         ) : (
           <div className="flex">
-            <p className="font-Montserrat">Données personnelles de :</p>
-            <select
-              onChange={handleChangeUser}
-              className="font-Montserrat bg-color4 ml-2 rounded transition-all"
-            >
+            <p>Données personnelles de :</p>
+            <select onChange={handleChangeUser} className="bg-color4 ml-2 rounded ">
               <option value="">Sélectionnez un utilisateur</option>
               {users.map((user: AccountData) =>
                 user._id === '6492e134a5703050889d0d20' ? null : (
