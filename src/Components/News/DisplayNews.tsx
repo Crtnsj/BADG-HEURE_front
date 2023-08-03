@@ -45,12 +45,16 @@ const News = () => {
       <div className="flex flex-col justify-center items-center w-full gap-4">
         <Title type="infos" />
         {isAdmin ? (
-          <button onClick={handleClickAddNews} className="btnAddElem">
+          <button onClick={handleClickAddNews} className={`btnAddElem ${inAdd ? 'turn' : ''} `}>
             <div className="btnAddElem__left"></div>
-            <div className="btnAddElem__plus"></div>
-            <div className="btnAddElem__anim">
-              <span className="btnAddElem__anim--text">Ajouter une news</span>
-            </div>
+            <div className={`btnAddElem__plus ${inAdd ? 'turn' : ''} `}></div>
+            {inAdd ? (
+              <></>
+            ) : (
+              <div className="btnAddElem__anim">
+                <span className="btnAddElem__anim--text">Ajouter une news</span>
+              </div>
+            )}
             <div className="btnAddElem__right"></div>
           </button>
         ) : (

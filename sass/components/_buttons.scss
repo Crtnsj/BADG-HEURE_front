@@ -9,10 +9,17 @@
 
 .btnAddElem {
   position: absolute;
-  left: 76vw;
+  left: 82vw;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 3rem;
+  @media (min-width: 550px) {
+    left: 76vw;
+  }
+  &.turn {
+    transform: rotate(45deg);
+  }
   &__left {
     width: 1.5rem;
     height: 3rem;
@@ -20,6 +27,7 @@
     background-color: $color1;
   }
   &__plus {
+    display: block;
     position: absolute;
     background-size: cover;
     background-position: center;
@@ -28,19 +36,19 @@
     background-image: url('../src/assets/plus.png');
   }
   &__anim {
-    position: absolute;
-    left: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     transform-origin: left;
-    transform: scaleX(0);
     background-color: $color1;
     height: 3rem;
-    border-radius: 0 3rem 3rem 0;
-    padding-right: 1.5rem;
     font-weight: 600;
     white-space: nowrap;
+    position: absolute;
+    left: 50%;
+    transform: scaleX(0);
+    border-radius: 0 3rem 3rem 0;
+    padding-right: 1.5rem;
   }
   &__right {
     width: 1.5rem;
@@ -48,12 +56,28 @@
     border-radius: 0 3rem 3rem 0;
     background-color: $color1;
   }
-  &:hover {
-    & > .btnAddElem__plus {
-      animation: btnAdd_icon 91ms ease-in-out both;
+  @media (max-width: 1000px) {
+    &:hover {
+      animation: vibrate infinite 0.3s ease-in-out;
+      &.turn {
+        animation: vibrate-turn infinite 0.3s ease-in-out;
+      }
     }
-    & > .btnAddElem__anim {
-      animation: btnAdd 250ms ease-in-out both;
+  }
+  @media (min-width: 1000px) {
+    &:hover {
+      &.turn {
+        animation: vibrate-turn infinite 0.3s ease-in-out;
+      }
+      & > .btnAddElem__plus {
+        animation: btnAdd_icon 91ms ease-in-out both;
+        &.turn {
+          animation: none;
+        }
+      }
+      & > .btnAddElem__anim {
+        animation: btnAdd 250ms ease-in-out both;
+      }
     }
   }
 }
