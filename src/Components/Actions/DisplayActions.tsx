@@ -27,7 +27,7 @@ const DisplayActions = () => {
     <div className="layoutPages">
       <Title type="action" />
 
-      <div className="layoutCard">
+      <div className="layoutCard layoutCard--actions">
         {actionType.map((info, index) => (
           <ActionCard key={index} actionType={info} />
         ))}

@@ -32,7 +32,12 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  @media (min-width: 400px) {
+  gap: 1rem;
+  @media (min-width: 500px) {
+    width: 45%;
+    flex-direction: column;
+  }
+  @media (min-width: 693px) {
     flex-direction: column;
     width: 20%;
     padding: 1.25rem;
@@ -67,6 +72,12 @@
   width: 83%;
   max-width: 56rem;
   flex-direction: column;
+  &--actions {
+    width: 83%;
+  }
+  @media (min-width: 710px) {
+    width: 83%;
+  }
   @media (min-width: 768px) {
     gap: 2rem;
   }
@@ -76,7 +87,7 @@
 }
 
 .newsCard {
-  padding: 1.25rem;
+  padding: 0.5rem;
   min-width: 8rem;
   background-color: $color3;
   border-radius: 0.25rem;
@@ -86,6 +97,9 @@
   width: 100%;
   @media (min-width: 768px) {
     width: 20%;
+  }
+  @media (min-width: 940px) {
+    padding: 1.25rem;
   }
   &__title {
     font-weight: 700;
@@ -102,17 +116,43 @@
   padding: 1rem;
   border-radius: 0.25rem;
   width: 33%;
+  min-width: 265px;
   justify-content: space-around;
   align-items: center;
   gap: 1rem;
+  flex-wrap: wrap;
+  @media (min-width: 1168px) {
+    flex-wrap: nowrap;
+  }
   &__pic {
     background-size: cover;
     background-position: center;
-    width: 16%;
+    width: 8rem;
     aspect-ratio: 1 / 1;
     background-image: url('../src/assets/logo_hour.png');
   }
   &__text {
     text-align: center;
+  }
+}
+
+.logInCard {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  position: absolute;
+  border: 2px solid $color1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  & input {
+    background-color: darken(white, 4);
+    border-bottom-width: 2px;
+    border-radius: 0.25rem;
+    margin-bottom: 0.25rem;
+  }
+  @media (min-width: 1000px) {
+    position: unset;
+    transform: none;
   }
 }

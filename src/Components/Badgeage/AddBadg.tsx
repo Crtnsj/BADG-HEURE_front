@@ -59,8 +59,10 @@ const AddBadg = () => {
       </div>
       <div className="layoutPages">
         <div className="addBadg">
-          <div className="addBadg__pic"></div>
-          <p className="addBadg__text">Badger ma présence</p>
+          <div className="flex justify-between gap-2 items-center">
+            <div className="addBadg__pic"></div>
+            <p className="addBadg__text">Badger ma présence</p>
+          </div>
           <button onClick={handleClick} className="btnAddBadg">
             Valider mon entrée / sortie
           </button>

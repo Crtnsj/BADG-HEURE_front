@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: $color1;
+  height: 2.75rem;
+  &__logo {
+    height: 100%;
+    width: 16%;
+    min-width: 13rem;
+    @media (min-width: 450px) {
+      min-width: 18rem;
+    }
+  }
+}

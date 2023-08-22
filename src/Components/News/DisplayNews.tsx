@@ -64,7 +64,7 @@ const News = () => {
       {inAdd ? (
         <AddNews />
       ) : (
-        <div className="layoutCard layoutCard--News">
+        <div className="layoutCard">
           {news.map((info, index) => (
             <NewsCard
               key={index}
