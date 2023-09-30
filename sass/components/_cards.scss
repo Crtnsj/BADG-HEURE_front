@@ -18,13 +18,14 @@
     align-items: center;
     height: 6rem;
     width: 6rem;
+    color: $color2;
   }
 }
 
 .actionCard {
   padding: 0.25rem;
   width: 100%;
-  min-width: 8rem;
+  min-width: 10rem;
   background-color: $color3;
   border-radius: 0.25rem;
   text-align: center;
@@ -37,7 +38,7 @@
     width: 45%;
     flex-direction: column;
   }
-  @media (min-width: 693px) {
+  @media (min-width: 878px) {
     flex-direction: column;
     width: 20%;
     padding: 1.25rem;
@@ -79,6 +80,9 @@
     width: 83%;
   }
   @media (min-width: 768px) {
+    gap: 1rem;
+  }
+  @media (min-width: 1000px) {
     gap: 2rem;
   }
   @media (min-width: 400px) {
@@ -88,17 +92,19 @@
 
 .newsCard {
   padding: 0.5rem;
-  min-width: 8rem;
+  min-width: 10rem;
   background-color: $color3;
   border-radius: 0.25rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  @media (min-width: 768px) {
+  gap: 0.5rem;
+
+  @media (min-width: 878px) {
     width: 20%;
   }
-  @media (min-width: 940px) {
+  @media (min-width: 1000px) {
     padding: 1.25rem;
   }
   &__title {
@@ -133,6 +139,13 @@
   }
   &__text {
     text-align: center;
+  }
+  &__OkPic {
+    background-size: cover;
+    background-position: center;
+    width: 8rem;
+    aspect-ratio: 1 / 1;
+    background-image: url('../src/assets/badgOk.png');
   }
 }
 

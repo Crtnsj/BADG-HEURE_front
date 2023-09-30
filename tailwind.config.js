@@ -25,8 +25,8 @@ export default {
         'login-gradient': '10px',
       },
       colors: {
-        color1: '#DCF2E6',
-        color2: '#36403A',
+        color1: '#cde0fe',
+        color2: '#525965',
         color3: '#e3e7ee',
         color4: '#f2f6fe',
       },
@@ -34,7 +34,7 @@ export default {
         // Simple 16 column grid
         'login-template': '1fr,10px,1fr',
       },
-      boxShadow: { Important: '1px 1px 2px red' },
+      boxShadow: { Important: '2px 2px 2px #525965' },
       minWidth: {
         '4/5': '80%',
         64: '18rem',

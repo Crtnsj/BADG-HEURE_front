@@ -55,3 +55,4 @@ Ce projet utilise les dépendances suivantes :
 | tailwindcss                      | 3.3.2   |
 | typescript                       | 5.0.2   |
 | vite                             | 4.3.9   |
+| sass                             | 1.63.6  |

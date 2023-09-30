@@ -45,9 +45,13 @@ const News = () => {
       <div className="flex flex-col justify-center items-center w-full gap-4">
         <Title type="infos" />
         {isAdmin ? (
+          // boutton add qui tourne si inAdd = true
           <button onClick={handleClickAddNews} className={`btnAddElem ${inAdd ? 'turn' : ''} `}>
+            {/* partie gauche du bouton */}
             <div className="btnAddElem__left"></div>
+            {/* icon plus qui ne disparait plus si inAdd = true */}
             <div className={`btnAddElem__plus ${inAdd ? 'turn' : ''} `}></div>
+            {/* Si inAdd = false alors le bouton peut se développer */}
             {inAdd ? (
               <></>
             ) : (
@@ -55,6 +59,7 @@ const News = () => {
                 <span className="btnAddElem__anim--text">Ajouter une news</span>
               </div>
             )}
+            {/* Partie droite du bouton */}
             <div className="btnAddElem__right"></div>
           </button>
         ) : (

@@ -6,7 +6,7 @@
   "scripts": {
     "vite": "vite",
     "sass": "sass --watch ./sass/main.scss:./src/css-compiled.css --style compressed",
-    "dev": "concurrently \"npm run vite\" \"npm run sass\"",
+    "dev": "concurrently \"pnpm run vite\" \"pnpm run sass\"",
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"

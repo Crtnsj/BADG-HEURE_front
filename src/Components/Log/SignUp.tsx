@@ -33,7 +33,7 @@ const SignUp = () => {
 
   return (
     <div className="bg-white p-4 rounded-lg gap-1">
-      <h1 className="font-bold mb-4 text-center">Inscrivez-vous</h1>
+      <h1 className="font-bold mb-4 text-center">Ajouter un utilisateur</h1>
       <form onSubmit={handleSubmit}>
         <div>
           <label>
@@ -58,10 +58,6 @@ const SignUp = () => {
             Mot de passe <br />
             <input type="password" name="pswd" onChange={handleChangePassword} value={password} />
           </label>
-        </div>
-        <div className="gap-3 flex">
-          <label>Restez connecté</label>
-          <input type="checkbox" name="stayConnect" />
         </div>
         <div className="flex justify-center m-2">
           <button className="bg-color2 text-white p-1 rounded-md">Valider</button>

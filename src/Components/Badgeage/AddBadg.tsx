@@ -1,7 +1,9 @@
 import axios from 'axios';
 import Title from '../Other/Title';
+import { useNavigate } from 'react-router-dom';
 
 const AddBadg = () => {
+  const navigate = useNavigate();
   const handleClick = () => {
     const data = { date: Date.now() };
     const now = new Date();
@@ -38,14 +40,12 @@ const AddBadg = () => {
         localStorage.setItem('timestamp', `${data.date}`);
         localStorage.setItem('count', `${1}`);
       }
+      navigate('/home/badgOk');
     }
 
     axios
       .post(`http://localhost:3002/badg/badgIn`, data, {
         headers: { Authorization: `Bearer ${localStorage.getItem('JWT')}` },
-      })
-      .then(() => {
-        console.log('OK!');
       })
       .catch((error) => {
         console.log(error);

@@ -5,6 +5,7 @@ type Props = {
   droits: string;
 };
 
+//Composant de mise en forme de la carte de compte
 const AccountCard = ({ nom, prenom, email, droits }: Props) => {
   return (
     <div className="flex justify-center">
