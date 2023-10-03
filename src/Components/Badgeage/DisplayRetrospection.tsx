@@ -19,7 +19,6 @@ const DisplayRetrospection = () => {
     };
     fetchData();
   }, []);
-
   return (
     <div className="layoutPages">
       <Title type="retrospection" />

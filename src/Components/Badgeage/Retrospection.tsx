@@ -1,17 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 
-interface DateObject {
-  dayOfWeek: string;
-  date: string;
-  hour: string;
-}
-
-type Props = {
-  dates: number[];
-};
-
-const Retrospection = (props: Props) => {
-  // State pour : La semaine actuelle, L'offset de la semaine à visualiser, Le numéro de la semaine affichée
+const Retrospection = (props: any) => {
+  // State pour : La semaine actuelle, L'offset de la semaine à visualiser,
+  //Le numéro de la semaine affichée
   const [actualWeek, setActualWeek] = useState<string[]>([]);
   const [weekOffset, setWeekOffset] = useState<number>(0);
   const [weekNumber, setWeekNumber] = useState<number>(0);
@@ -21,7 +12,7 @@ const Retrospection = (props: Props) => {
 
   useEffect(() => {
     // Date actuelle
-    let now = new Date();
+    const now = new Date();
     // Calcul de la date en fonction de l'offset de la semaine
     // En cas de changement de l'offset de la semaine now change +/- d'une semaine
     now.setDate(now.getDate() + weekOffset * 7);
@@ -65,7 +56,7 @@ const Retrospection = (props: Props) => {
 
   // Fonction qui traduit un timestamp et rend un objet avec le jour,
   //la date au format : dd/mm/yy, et l'heure sous la forme hh:mm
-  const formatDate = (date: Date): DateObject => {
+  const formatDate = (date: any) => {
     const daysOfWeek = ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Diman'];
     // Jour de la semaine au format court (Lun, Mar, etc.)
     const dayOfWeek = daysOfWeek[date.getDay() + 1];
@@ -78,21 +69,18 @@ const Retrospection = (props: Props) => {
     const minutes = date.getMinutes().toString().padStart(2, '0');
     return {
       dayOfWeek: dayOfWeek,
-      date: `${day}/${month}/${year}`,
+      date: day + '/' + month + '/' + year,
       hour: `${hours}:${minutes}`,
     };
   };
 
-  // Traduction des timestamps passés en props en dates lisibles
-  const traduction = props.dates.map((date) => formatDate(new Date(date)));
+  const traduction = props.dates.map((date: any) => formatDate(new Date(parseInt(date))));
 
   const handlePrevWeek = () => {
-    // Décrémente l'offset de la semaine pour revenir en arrière d'une semaine
     setWeekOffset(weekOffset - 1);
   };
 
   const handleNextWeek = () => {
-    // Incrémente l'offset de la semaine pour avancer d'une semaine
     setWeekOffset(weekOffset + 1);
   };
 
@@ -128,7 +116,7 @@ const Retrospection = (props: Props) => {
             const cells = [];
             // filtre les dates traduites (traduction) pour ne conserver que celles
             // qui correspondent à la date (jour) actuellement traitée
-            const matchingDates = traduction.filter((date: DateObject) => date.date === jour);
+            const matchingDates = traduction.filter((date: any) => date.date === jour);
 
             for (let i = 0; i < 4; i++) {
               // Si une date correspondante est trouvée à l'index i, une cellule contenant

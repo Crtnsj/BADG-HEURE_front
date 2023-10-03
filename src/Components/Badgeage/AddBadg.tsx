@@ -40,9 +40,7 @@ const AddBadg = () => {
         localStorage.setItem('timestamp', `${data.date}`);
         localStorage.setItem('count', `${1}`);
       }
-      navigate('/home/badgOk');
     }
-
     axios
       .post(`http://localhost:3002/badg/badgIn`, data, {
         headers: { Authorization: `Bearer ${localStorage.getItem('JWT')}` },
@@ -50,6 +48,7 @@ const AddBadg = () => {
       .catch((error) => {
         console.log(error);
       });
+    navigate('/home/badgOk');
   };
 
   return (
